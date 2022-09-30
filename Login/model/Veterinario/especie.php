@@ -46,7 +46,7 @@ if ((isset($_POST["btnguardar"])) && ($_POST["btnguardar"] == "frmadd"))
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/estilos_roles.css">
+    <link rel="stylesheet" href="../Administrador/css/estilos_roles.css">
     <link rel="shortcut icon" href="../../controller/image/icon_proyect_final.png" type="image/x-icon">
     <script src="https://kit.fontawesome.com/339217bc67.js" crossorigin="anonymous"></script>
     <title>Creacion de Especies</title>
@@ -129,7 +129,7 @@ if ((isset($_POST["btnguardar"])) && ($_POST["btnguardar"] == "frmadd"))
                     </tr>
                     <tr>
                         <td>Tipo de Especie</td>
-                        <td><input type="text" name="tpespe" placeholder=" Ingrese tipo de especie" style="text-transform: uppercase;"></td>
+                        <td><input type="text" name="tpespe" placeholder=" Ingrese tipo de especie"></td>
                     </tr>
                     <tr>
                         <td colspan="2">&nbsp;</td>

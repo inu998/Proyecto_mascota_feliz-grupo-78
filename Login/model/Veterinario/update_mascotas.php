@@ -29,7 +29,7 @@ elseif(isset($_POST["delete"]))
 <script> 
 function centrar() { 
     iz=(screen.width-document.body.clientWidth) / 2; 
-    de=(screen.height-document.body.clientHeight) / 2; 
+    de=(screen.height-document.body.clientHeight) / 3; 
     moveTo(iz,de); 
 }     
 </script>
@@ -38,11 +38,37 @@ function centrar() {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../../controller/image/icon_proyect_final.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/estilos_roles.css">
+    <link rel="stylesheet" href="../Administrador/css/estilos_update.css">
     <script src="https://kit.fontawesome.com/339217bc67.js" crossorigin="anonymous"></script>
     <title>Agregar Usuario</title>
 </head>
     <body onload="centrar();">
+    <div class="background">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            
+        </div>
+    <div class="Update_mascotas">
     <table>
         <form name = "consult" method="POST" autocomplete="off">
             <tr>
@@ -83,5 +109,6 @@ function centrar() {
                 </tr>
         </form>
     </table>
+    </div>
     </body>
 </html>

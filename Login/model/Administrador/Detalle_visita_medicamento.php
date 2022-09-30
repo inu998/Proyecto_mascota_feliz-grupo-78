@@ -6,44 +6,41 @@ include("../../controller/validarSesion.php");
 $sql="SELECT * FROM tb_usuario, tb_tipo_usuario WHERE tb_usuario.cedula = '".$_SESSION['usuario']."' AND tb_usuario.id_tipo_usuario = tb_tipo_usuario.id_tipo_usuario";
 	$usuarios = mysqli_query($mysqli, $sql) or die(mysqli_error());
 	$usua = mysqli_fetch_assoc($usuarios);
-
-
 ?>
-<?php
-// CONSULTA VISITA
-$sql1="SELECT * FROM tb_visita, tb_mascota, tb_usuario, tb_estado_salud WHERE tb_visita.id_mascota=tb_mascota.id_mascota AND tb_visita.cedula_usuario=tb_usuario.cedula AND tb_visita.id_estado_salud=tb_estado_salud.id_estado_salud";
-$tp_usu = mysqli_query($mysqli, $sql1);
-$usua1 = mysqli_fetch_assoc($tp_usu);
-?>
-
 <?php
 // CONSULTA PARA MEDICAMENTO
 $sql2="SELECT * FROM  tb_medicamentos";
-$estado2 = mysqli_query($mysqli, $sql2);
-$usua2 = mysqli_fetch_assoc($estado2);
+$medicamento = mysqli_query($mysqli, $sql2);
+$result = mysqli_fetch_assoc($medicamento);
 ?>
-
+<?php
+// CONSULTA PARA LAS VISITAS A LA MASCOTA
+$sql3="SELECT * FROM  tb_visita , tb_mascota WHERE tb_visita.id_mascota = tb_mascota.id_mascota";
+$visita = mysqli_query($mysqli, $sql3);
+$result2 = mysqli_fetch_assoc($visita);
+?>
 <?php
 
 if ((isset($_POST["btnguardar"])) && ($_POST["btnguardar"] == "frmadd"))
 {
 
-    $tp = $_POST['estdousu']; 
-    $sqladd = "SELECT * FROM tb_estado  WHERE estado = '$tp' ";
+    $medicamento = $_POST['medicamento']; 
+    $visita = $_POST['visita'];
+    $sqladd = "SELECT * FROM detalle_visita_medicamento  WHERE id_visita = '$visita' AND Id_medicamento = '$medicamento'";
     $query = mysqli_query($mysqli, $sqladd); 
     $fila = mysqli_fetch_assoc($query);
     if  ($fila){
-        echo '<script>alert (" El estdo ya existe");</script>';
+        echo '<script>alert (" EL medicamento ya esta asignado a esta visita");</script>';
         echo '<script>window.location= "Detalle_visita_medicamento.php"</script>';
 
-    }elseif ($_POST['estdousu'] == ""){
+    }elseif ($_POST['visita'] == "" || $_POST['medicamento'] == ""){
         echo '<script>alert (" Existen campos vacios");</script>';
         echo '<script>window.location= "Detalle_visita_medicmento.php"</script>';
 
     }else {
-        
-        $tp = $_POST['estdousu']; 
-        $sqladd = "INSERT INTO tb_estado  (estado) VALUES ('$tp') ";
+        $medicamento = $_POST['medicamento']; 
+        $visita = $_POST['visita'];
+        $sqladd = "INSERT INTO detalle_visita_medicamento (id_visita,id_medicamento) VALUES ('$visita','$medicamento')";
         $query = mysqli_query($mysqli, $sqladd);
         echo '<script>alert (" Registro Exitoso ");</script>';
         echo '<script>window.location= "Detalle_visita_medicamento.php"</script>';
@@ -137,35 +134,34 @@ if ((isset($_POST["btnguardar"])) && ($_POST["btnguardar"] == "frmadd"))
                 </tr>
                 <tr>
                     <td>Identificador</td>
-                    <td><input type="text" placeholder="Asignado automaticamente"readonly></td>
+                    <td><input type="text" readonly></td>
                 </tr>
                 <tr>
-                    <td>Numero visita</td>
+                    <td>Nombra mascota- id visita</td>
                     <td>
                         <select name="visita">
-                            <option value= "">  </option>
+                            <option value= ""> Seleccione una opción </option>
                             <?php
-                            
                             do{            
                             ?>
-                            <option value= "<?php echo($usua1['id_visita'])?>"><?php echo($usua1['id_visita'])?> <?php echo($usua1['nombre'])?></option>
+                            <option value="<?php echo($result2['id_visita'])?>"><?php echo($result2['id_visita'])?>  <?php echo($result2['nombre'])?></option>
                             <?php
-                            }while($usua1 =mysqli_fetch_assoc($tp_usu));
+                            }while($result2 =mysqli_fetch_assoc($visita));
                             ?>
                         </select>
                     </td>
                 </tr>
                 <tr>
-                    <td>Numero Medicamento</td>
+                    <td>Medicamento</td>
                     <td>
                         <select name="medicamento">
                             <option value= ""> Seleccione una opción </option>
                             <?php
                             do{ 
                             ?>
-                            <option value= "<?php echo($usua2['Id_medicamento'])?>"><?php echo($usua2['Nombre_medicamento'])?></option>
+                            <option value= "<?php echo($result['Id_medicamento'])?>"><?php echo($result['Nombre_medicamento'])?></option>
                             <?php
-                            }while($usua2 =mysqli_fetch_assoc($estado2));
+                            }while($result =mysqli_fetch_assoc($medicamento));
                             ?>
                         </select>
                     </td>

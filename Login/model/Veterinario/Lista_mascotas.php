@@ -15,7 +15,7 @@ $usua = mysqli_fetch_assoc($usuarios);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../../controller/image/icon_proyect_final.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/estilos_roles.css">
+    <link rel="stylesheet" href="../Administrador/css/estilos_roles.css">
     <script src="https://kit.fontawesome.com/339217bc67.js" crossorigin="anonymous"></script>
     <title>Lista mascotas</title>
 </head>
@@ -99,22 +99,22 @@ $usua = mysqli_fetch_assoc($usuarios);
                         <td>&nbsp;</td>
                     </tr>
                     <?php
-                    $sql="SELECT * FROM tb_usuario, tb_mascota, tb_afiliacion WHERE tb_mascota.cedula_usuario= tb_usuario.cedula AND tb_mascota.id_afiliacion = tb_afiliacion.id_afiliacion;";
+                    $sql_mascota="SELECT * FROM tb_usuario, tb_mascota, tb_afiliacion WHERE tb_mascota.cedula_usuario= tb_usuario.cedula AND tb_mascota.id_afiliacion = tb_afiliacion.id_afiliacion;";
                     $i=0;
-                    $query=mysqli_query($mysqli,$sql);
-                    while($result=mysqli_fetch_assoc($query)){
+                    $query_mascota=mysqli_query($mysqli,$sql_mascota);
+                    while($result_mascota=mysqli_fetch_assoc($query_mascota)){
                         $i++
                     ?>
                     <tr>
                         <td><?php echo $i?></td>
-                        <td><?php echo $result['nombre'] ?></td>
-                        <td><?php echo $result['raza'] ?></td>
-                        <td><?php echo $result['color'] ?></td>
-                        <td><?php echo $result['nombres'] ?></td>
-                        <td><?php echo $result['cedula'] ?></td>
-                        <td><?php echo $result['direccion'] ?></td>
-                        <td><?php echo $result['Afiliacion'] ?></td>
-                        <td><a href="?id=<?php echo $result['id_mascota'] ?>" onclick="window.open('update_mascotas.php?id=<?php echo $result['id_mascota'] ?>','','width= 600,height=500, toolbar=NO');void(null);">Modificar</a></td>
+                        <td><?php echo $result_mascota['nombre'] ?></td>
+                        <td><?php echo $result_mascota['raza'] ?></td>
+                        <td><?php echo $result_mascota['color'] ?></td>
+                        <td><?php echo $result_mascota['nombres'] ?></td>
+                        <td><?php echo $result_mascota['cedula'] ?></td>
+                        <td><?php echo $result_mascota['direccion'] ?></td>
+                        <td><?php echo $result_mascota['Afiliacion'] ?></td>
+                        <td><a href="?id=<?php echo $result_mascota['id_mascota'] ?>" onclick="window.open('update_mascotas.php?id=<?php echo $result_mascota['id_mascota'] ?>','','width= 500,height=300, toolbar=NO');void(null);">Modificar</a></td>
                         <td>&nbsp;</td>
                     </tr>
                     <?php } ?>

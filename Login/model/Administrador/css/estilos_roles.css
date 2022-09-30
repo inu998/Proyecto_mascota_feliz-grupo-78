@@ -215,6 +215,21 @@ body{
     border-radius: 20px;
     align-items:center;
 }
+.Formulario_visita{
+    width: 2s;
+    height: 2s;
+    background: rgb(155, 0, 238);
+    background: linear-gradient(to left , hsla(240, 54%, 51%, 0.829), hsla(318, 27%, 78%, 0.838));
+    position:absolute;
+    top: 200%;;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 1em ;
+    border-radius: 20px;
+    align-items:center;
+}
+
 .Update_usuarios{
     width: 2s;
     height: 2s;

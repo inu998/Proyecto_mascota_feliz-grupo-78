@@ -36,44 +36,8 @@ if ((isset($_POST["btnguardar"])) && ($_POST["btnguardar"] == "frmadd"))
         echo '<script>window.location= "medicamento.php"</script>';
 
     }
-
 }
-
 ?>
-
-<form method="POST">
-
-    <tr>
-        <td colspan='2' align="center"><?php echo $usua['nombres']?></td>
-        <td colspan='2' align="center"><?php echo $usua['apellidos']?></td>
-    </tr>
-<tr><br>
-    <td colspan='2' align="center">
-    
-    
-        <input type="submit" value="Cerrar sesión" name="btncerrar" /></td>
-        <input type="submit" formaction="index.php" value="Regresar" />
-    </tr>
-</form>
-
-<?php 
-
-if(isset($_POST['btncerrar']))
-{
-	session_destroy();
-
-   
-    header('location: ../../index.html');
-}
-	
-?>
-
-</div>
-
-</div>
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -81,49 +45,100 @@ if(isset($_POST['btncerrar']))
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilos.css">
-    <link rel="shortcut icon" href="../../../controller/img/icon_proyect_final.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../../controller/image/icon_proyect_final.png" type="image/x-icon">
+    <link rel="stylesheet" href="../Administrador/css/estilos_roles.css">
+    <script src="https://kit.fontawesome.com/339217bc67.js" crossorigin="anonymous"></script>
     <title>Creacion de Medicamentos</title>
     
 
 </head>
-    <body>
+<body onload="frm_add.tipo_usuario.focus()">
+    <div class="background">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>   
+            <span></span>
+            <span></span>
+        </div>
+        <div class="cabezera">
         <section class="title">
-            <h1>Formulario Creacion de Medicamentos <?php echo $usua['tipo_usuario']?></span></h1> 
-            
+        <h1>Formulario <br>creacion de medicamentos</h1>
+                <span><i class="fa-solid fa-circle-user"></i></span>
+                <span class="tipo_usuario"><?php echo $usua['tipo_usuario']?></span>
+                <br>
+                <span class="usuario"><?php echo $usua['nombres']?> <?php echo $usua['apellidos']?></span>
+                <a href="index.php">Regresar<i class="fa-solid fa-rotate-left"></i></a>
+                <a href="../../controller/salir.php">Salir<i class="fa-solid fa-up-right-from-square"></i></a>1>
         </section>
-        <table class="centrar" border="1">
+        </div>
+        <div class= "Formulario_creacion_medicamento">
+        <table class="centrar" >
              <form method="POST" name="frmadd" autocomplete="off">
                <tr>
                     <td colspan="2">Tipos de Medicamento</td>
-
                 </tr>
-
                 <tr>
                     <td>Identificador</td>
-                    <td><input type="number" readonly ></td>
+                    <td><input type="number" readonly placeholder="Asignado autocomplete"></td>
                 </tr>
-
                 <tr>
                     <td>Nombre Medicamento</td>
-                    <td><input type="text" name="medic" placeholder=" Ingrese Medicamento" style="text-transform: uppercase;"></td>
+                    <td><input type="text" name="medic" placeholder=" Ingrese Medicamento"></td>
                 </tr>
-
                 <tr>
                     <td colspan="2">&nbsp;</td>
-
                 </tr>
-                
                 <tr>
                     <td colspan="2"><input type="submit" name="btnadd" value="Guardar"></td>
                     <input type="hidden" name="btnguardar" value="frmadd">
-
                 </tr>
-
              </form>  
-
-
         </table>
-        
+    </div>
     </body>
 </html>

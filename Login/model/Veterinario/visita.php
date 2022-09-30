@@ -50,32 +50,90 @@ if ((isset($_POST["boton_guardar"])) && ($_POST["boton_guardar"] == "formulario_
         $salud= $_POST["estsal"];
         $costo = $_POST["costo"];
         $recom = $_POST["recom"];
-
-        $sqladd="INSERT INTO tb_visita (fecha_hora, id_mascota, cedula_usuario, id_estado_salud, Peso, Temperatura, FrecuenciaRes, FrecuenciaCar, Recomendaciones, costoVisita) VALUE ('$fecha', '$idma', '$cedula', '$salud', '$peso', '$temp', '$respi', '$cardiac','$recom','$costo')";
+        $sqladd="INSERT INTO tb_visita (fecha_hora, id_mascota, cedula_veterinario, id_estado_salud, Peso, Temperatura, FrecuenciaRes, FrecuenciaCar, Recomendaciones, costoVisita) VALUE ('$fecha', '$idma', '$cedula', '$salud', '$peso', '$temp', '$respi', '$cardiac','$recom','$costo')";
         $query=mysqli_query($mysqli,$sqladd);
         echo '<script>alert (" Guardado con exito ");</script>';
         echo '<script>window.location="visita.php"</script>';
     }
 }
-
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="shortcut icon" href="../../controller/image/icon_proyect_final.png" type="image/x-icon">
+    <link rel="stylesheet" href="../Administrador/css/estilos_roles.css">
+    <script src="https://kit.fontawesome.com/339217bc67.js" crossorigin="anonymous"></script>
     <title>Visita Medica</title>
 </head>
     <body onload="frm_add.tipo_usuario.focus()">
-
+    <div class="background">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>   
+            <span></span>
+            <span></span>
+        </div>
+        <div class="cabezera">
         <section class="title">
-            <h1>FORMULARIO CREACION VISITA <br/><?php echo $usua['tipo_usuario']?></span></h1>
+                <h1>Formulario <br>creacion visita</h1>
+                <span><i class="fa-solid fa-circle-user"></i></span>
+                <span class="tipo_usuario"><?php echo $usua['tipo_usuario']?></span>
+                <br>
+                <span class="usuario"><?php echo $usua['nombres']?> <?php echo $usua['apellidos']?></span>
+                <a href="index.php">Regresar<i class="fa-solid fa-rotate-left"></i></a>
+                <a href="../../controller/salir.php">Salir<i class="fa-solid fa-up-right-from-square"></i></a>1>
         </section>
-        <table class = "centrar" border=1>
+
+        <div class= "Formulario_visita">
+        <table class = "centrar">
             <form method="POST" name="formulario_agregar" class = "form" autocomplete="off">
                 <tr>
                     <td colspan="2">Visita</td>
@@ -83,9 +141,8 @@ if ((isset($_POST["boton_guardar"])) && ($_POST["boton_guardar"] == "formulario_
 
                 <tr>
                     <td >Id visita</td>
-                    <td><input type="text" name="idvisita" readonly></td>
+                    <td><input type="text" name="idvisita" placeholder="Asignado automaticamente"readonly></td>
                 </tr>
-
                 <tr>
                     <td >Fecha Visita</td>
                     <td><input type= "date" name="date" ;></td>
@@ -167,7 +224,7 @@ if ((isset($_POST["boton_guardar"])) && ($_POST["boton_guardar"] == "formulario_
 
                 <tr>
                     <td >Recomendaciones</td>
-                    <td><input type="texto" name="recom" placeholder=" Ingrese costo de la visita"></td>
+                    <td><input type="texto" name="recom" placeholder=" Ingrese las recomendaciones"></td>
                 </tr>
 
                 <tr>
@@ -177,9 +234,8 @@ if ((isset($_POST["boton_guardar"])) && ($_POST["boton_guardar"] == "formulario_
                     <td colspan="2"><input type="submit" name="boton_add" value="Guardar"></td>
                     <input type="hidden" name="boton_guardar" value="formulario_agregar">
                 </tr>
-
-
             </form>
         </table>
+        </div>
     </body>
 </html>
