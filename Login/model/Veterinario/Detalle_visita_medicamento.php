@@ -58,7 +58,7 @@ if ((isset($_POST["btnguardar"])) && ($_POST["btnguardar"] == "frmadd"))
     <link rel="shortcut icon" href="../../controller/image/icon_proyect_final.png" type="image/x-icon">
     <link rel="stylesheet" href="css/estilos_roles.css">
     <script src="https://kit.fontawesome.com/339217bc67.js" crossorigin="anonymous"></script>
-    <title>Creacion de Usuarios</title>
+    <title>Medicamento Visita</title>
     
 
 </head>
