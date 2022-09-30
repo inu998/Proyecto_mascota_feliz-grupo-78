@@ -145,7 +145,7 @@ $result = mysqli_fetch_assoc($usuario);
                         <td><?php echo $result['raza'] ?></td>
                         <td><?php echo $result['color'] ?></td>
                         <td><?php echo $result['Afiliacion'] ?></td>
-                        <td><a href="?id=<?php echo $result['id_mascota'] ?>" onclick="window.open('Historia.php?id=<?php echo $result['id_mascota'] ?>','','width= 1000,height=600, toolbar=NO');void(null);">Modificar</a></td>
+                        <td><a href="?id=<?php echo $result['id_mascota'] ?>" onclick="window.open('Historia.php?id=<?php echo $result['id_mascota'] ?>','','width= 1000,height=600, toolbar=NO');void(null);">Historia</a></td>
                         <td>&nbsp;</td>
                     </tr>
                     <?php } ?>
