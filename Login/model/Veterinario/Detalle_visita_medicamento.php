@@ -58,7 +58,7 @@ if ((isset($_POST["btnguardar"])) && ($_POST["btnguardar"] == "frmadd"))
     <link rel="shortcut icon" href="../../controller/image/icon_proyect_final.png" type="image/x-icon">
     <link rel="stylesheet" href="../Administrador/css/estilos_roles.css">
     <script src="https://kit.fontawesome.com/339217bc67.js" crossorigin="anonymous"></script>
-    <title>Creacion de Usuarios</title>
+    <title>Medicamento Visita</title>
     
 
 </head>
@@ -137,7 +137,7 @@ if ((isset($_POST["btnguardar"])) && ($_POST["btnguardar"] == "frmadd"))
                     <td><input type="text" readonly></td>
                 </tr>
                 <tr>
-                    <td>Nombra mascota- id visita</td>
+                    <td>Nombre mascota- id visita</td>
                     <td>
                         <select name="visita">
                             <option value= ""> Seleccione una opción </option>

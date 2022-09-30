@@ -50,10 +50,14 @@ if ((isset($_POST["boton_guardar"])) && ($_POST["boton_guardar"] == "formulario_
         $salud= $_POST["estsal"];
         $costo = $_POST["costo"];
         $recom = $_POST["recom"];
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6841ba5bbc34b247cddddad2e0cf62d3d1082d02
         $sqladd="INSERT INTO tb_visita (fecha_hora, id_mascota, cedula_veterinario, id_estado_salud, Peso, Temperatura, FrecuenciaRes, FrecuenciaCar, Recomendaciones, costoVisita) VALUE ('$fecha', '$idma', '$cedula', '$salud', '$peso', '$temp', '$respi', '$cardiac','$recom','$costo')";
         $query=mysqli_query($mysqli,$sqladd);
         echo '<script>alert (" Guardado con exito ");</script>';
-        echo '<script>window.location="visita.php"</script>';
+        echo '<script>window.location="index.php"</script>';
     }
 }
 ?>
@@ -64,8 +68,12 @@ if ((isset($_POST["boton_guardar"])) && ($_POST["boton_guardar"] == "formulario_
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../../controller/image/icon_proyect_final.png" type="image/x-icon">
+<<<<<<< HEAD
     <link rel="stylesheet" href="../Administrador/css/estilos_roles.css">
     <script src="https://kit.fontawesome.com/339217bc67.js" crossorigin="anonymous"></script>
+=======
+    <link rel="stylesheet" href="estilos.css">
+>>>>>>> 6841ba5bbc34b247cddddad2e0cf62d3d1082d02
     <title>Visita Medica</title>
 </head>
     <body onload="frm_add.tipo_usuario.focus()">
@@ -123,6 +131,7 @@ if ((isset($_POST["boton_guardar"])) && ($_POST["boton_guardar"] == "formulario_
         </div>
         <div class="cabezera">
         <section class="title">
+<<<<<<< HEAD
                 <h1>Formulario <br>creacion visita</h1>
                 <span><i class="fa-solid fa-circle-user"></i></span>
                 <span class="tipo_usuario"><?php echo $usua['tipo_usuario']?></span>
@@ -130,6 +139,15 @@ if ((isset($_POST["boton_guardar"])) && ($_POST["boton_guardar"] == "formulario_
                 <span class="usuario"><?php echo $usua['nombres']?> <?php echo $usua['apellidos']?></span>
                 <a href="index.php">Regresar<i class="fa-solid fa-rotate-left"></i></a>
                 <a href="../../controller/salir.php">Salir<i class="fa-solid fa-up-right-from-square"></i></a>1>
+=======
+            <h1>FORMULARIO CREACION VISITA <br/><?php echo $usua['tipo_usuario']?></span></h1>
+            <span class="tipo_usuario"><?php echo $usua['tipo_usuario']?></span>
+                <br>
+                <span class="usuario"><?php echo $usua['nombres']?> <?php echo $usua['apellidos']?></span>
+                <a href="index.php">Regresar<i class="fa-solid fa-rotate-left"></i></a>&nbsp
+                <a href="../../controller/salir.php">Salir<i class="fa-solid fa-up-right-from-square"></i></a>
+        
+>>>>>>> 6841ba5bbc34b247cddddad2e0cf62d3d1082d02
         </section>
 
         <div class= "Formulario_visita">
