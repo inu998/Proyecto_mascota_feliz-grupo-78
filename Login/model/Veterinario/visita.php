@@ -74,6 +74,9 @@ if ((isset($_POST["boton_guardar"])) && ($_POST["boton_guardar"] == "formulario_
 
         <section class="title">
             <h1>FORMULARIO CREACION VISITA <br/><?php echo $usua['tipo_usuario']?></span></h1>
+            <a href="index.php">Regresar<i class="fa-solid fa-rotate-left"></i></a>
+            <a href="../../controller/salir.php">Salir<i class="fa-solid fa-up-right-from-square"></i></a>
+        
         </section>
         <table class = "centrar" border=1>
             <form method="POST" name="formulario_agregar" class = "form" autocomplete="off">
