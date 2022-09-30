@@ -74,8 +74,11 @@ if ((isset($_POST["boton_guardar"])) && ($_POST["boton_guardar"] == "formulario_
 
         <section class="title">
             <h1>FORMULARIO CREACION VISITA <br/><?php echo $usua['tipo_usuario']?></span></h1>
-            <a href="index.php">Regresar<i class="fa-solid fa-rotate-left"></i></a>
-            <a href="../../controller/salir.php">Salir<i class="fa-solid fa-up-right-from-square"></i></a>
+            <span class="tipo_usuario"><?php echo $usua['tipo_usuario']?></span>
+                <br>
+                <span class="usuario"><?php echo $usua['nombres']?> <?php echo $usua['apellidos']?></span>
+                <a href="index.php">Regresar<i class="fa-solid fa-rotate-left"></i></a>&nbsp
+                <a href="../../controller/salir.php">Salir<i class="fa-solid fa-up-right-from-square"></i></a>
         
         </section>
         <table class = "centrar" border=1>
