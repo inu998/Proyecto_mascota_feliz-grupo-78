@@ -137,7 +137,7 @@ if ((isset($_POST["btnguardar"])) && ($_POST["btnguardar"] == "frmadd"))
                     <td><input type="text" readonly></td>
                 </tr>
                 <tr>
-                    <td>Nombra mascota- id visita</td>
+                    <td>Nombre mascota- id visita</td>
                     <td>
                         <select name="visita">
                             <option value= ""> Seleccione una opción </option>
