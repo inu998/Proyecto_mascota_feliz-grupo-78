@@ -51,7 +51,7 @@ if ((isset($_POST["boton_guardar"])) && ($_POST["boton_guardar"] == "formulario_
         $costo = $_POST["costo"];
         $recom = $_POST["recom"];
 
-        $sqladd="INSERT INTO tb_visita (fecha_hora, id_mascota, cedula_usuario, id_estado_salud, Peso, Temperatura, FrecuenciaRes, FrecuenciaCar, Recomendaciones, costoVisita) VALUE ('$fecha', '$idma', '$cedula', '$salud', '$peso', '$temp', '$respi', '$cardiac','$recom','$costo')";
+        $sqladd="INSERT INTO tb_visita (fecha_hora, id_mascota, cedula_veterinario, id_estado_salud, Peso, Temperatura, FrecuenciaRes, FrecuenciaCar, Recomendaciones, costoVisita) VALUE ('$fecha', '$idma', '$cedula', '$salud', '$peso', '$temp', '$respi', '$cardiac','$recom','$costo')";
         $query=mysqli_query($mysqli,$sqladd);
         echo '<script>alert (" Guardado con exito ");</script>';
         echo '<script>window.location="index.php"</script>';
